@@ -1,0 +1,33 @@
+@import "../assets/sass/all.scss";
+
+.container {
+    padding: 30px;
+    background-color: $dustyGray;
+}
+
+.header {
+    margin: 0 0 10px;
+}
+
+.rowWrap {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+.leftCol {
+    width: 20%;
+    box-sizing: border-box;
+}
+.rightCol {
+    width: 80%;
+    box-sizing: border-box;
+}
+
+.developedBy {
+    text-align: center;    
+    font-size: 22px;
+}
+
+.title {
+    font-weight: 600;
+}

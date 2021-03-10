@@ -1,0 +1,47 @@
+@import "../../assets/sass/all.scss";
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 25%;    
+}
+
+.cardInner {
+    min-height: 450px;
+    background: $white;
+    border-radius: 10px;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.05);
+    margin: 0 20px 20px 0;
+    padding: 20px;
+}
+
+.imgWrap {
+    background: $dustyGray;
+    border-radius: 5px;
+}
+
+.details {
+    padding: 10px 0 10px;
+}
+.missionName {
+    color: $blueRibbon;
+    font-weight: 600;
+}
+
+.missionidWrap {
+    margin: 0;
+}
+
+.missionid {
+    color: $blueRibbon;
+}
+
+.title {
+    font-weight: 600;
+    margin-top: 10px;
+    display: inline-block;
+}
+

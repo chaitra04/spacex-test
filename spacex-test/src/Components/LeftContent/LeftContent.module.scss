@@ -1,0 +1,39 @@
+@import "../../assets/sass/all.scss";
+
+
+.leftColWrap {
+    background: $white;
+    border-radius: 10px;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.05);
+    margin-right: 20px;
+    padding: 10px 20px;
+}
+
+.header {
+    margin: 0;
+}
+
+.contentTitle {   
+    margin: 10px 20px;
+    border-bottom: 1px solid $dustyGray;
+    text-align: center;
+    padding: 0 0 10px 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.year {
+    text-align: center;
+    width: 45%;
+    box-sizing: border-box;
+    padding: 7px 20px;
+    border-radius: 10px;
+    background-color: $pastelGreen;
+    margin-bottom: 15px;
+    text-align: center;
+    text-transform: capitalize;
+    cursor: pointer;
+}
