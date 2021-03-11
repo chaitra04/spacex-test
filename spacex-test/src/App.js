@@ -7,9 +7,7 @@ import { Link, BrowserRouter } from 'react-router-dom';
 function App() {
   return (
     <div>
-      <BrowserRouter>
           <Routeconfig/>
-      </BrowserRouter>
     </div>
   );
 }

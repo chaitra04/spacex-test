@@ -4,7 +4,6 @@ let loadingcomp = null;
 
 const HOC = (Component) => {
     return loadingcomp = (props) => {
-        console.log(props);
         if(props.apiCalled) {
             return <div>
             Loading .....

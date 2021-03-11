@@ -3,6 +3,7 @@ import express from "express";
 import fs from "fs";
 import path from "path";
 import ReactDOMServer from "react-dom/server";
+import { StaticRouter } from 'react-router'
 import App from "../src/App";
 const app = express();
 const PORT = 3006;
@@ -12,11 +13,19 @@ app.use("^/$", (req, res, next) => {
         console.log(err);
         return res(500).send("some err happened");
     }
+    const context = {};
+    const html = ReactDOMServer.renderToString(
+        <StaticRouter
+          location={req.url}
+          context={context}
+        >
+          <App/>
+        </StaticRouter>
+      )
         return res.send(
-            // data.replace('<div id="root"></div>', `<div id="root">${ReactDOMServer.renderToString(<App/>)}</div>`)
             data.replace(
                 '<div id="root"></div>',
-                `<div id="root">${ReactDOMServer.renderToString(<App />)}</div>`
+                `<div id="root">${html}</div>`
               )
         )
   });
