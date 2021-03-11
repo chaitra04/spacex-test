@@ -4,10 +4,35 @@ import Data from "../../Utils/Data";
 import classes from "./LeftContent.module.scss";
 
 const LeftContent = ({
-  launchyearFilter,
-  successfulLaunchFilter,
-  successfulLandingFilter,
+  applyFilter,
+  launchYear,
+  successfulLaunch,
+  successfulLanding
 }) => {
+  console.log( launchYear,
+    successfulLaunch,
+    successfulLanding)
+  const applyYearFilter = (year) => {
+    if(year === launchYear)
+    applyFilter("" , successfulLaunch, successfulLanding);
+    else
+    applyFilter(year , successfulLaunch, successfulLanding)
+  }
+
+  const applysuccessfulLaunchFilter = (bool) => {
+    if(bool === successfulLaunch)
+    applyFilter(launchYear , "", successfulLanding);
+    else
+    applyFilter(launchYear , bool, successfulLanding)
+  }
+
+  const applysuccessfulLandingFilter = (bool) => {
+    if(bool === successfulLanding)
+    applyFilter(launchYear , successfulLaunch, "");
+    else
+    applyFilter(launchYear , successfulLaunch, bool)
+  }
+
   return (
     <div className={classes.leftColWrap}>
       <h2 className={classes.header}>{Data.filters}</h2>
@@ -17,8 +42,11 @@ const LeftContent = ({
           return (
             <div
               key={year}
-              className={classes.year}
-              onClick={() => launchyearFilter(year)}
+              className={[
+                classes.year,
+                year === launchYear && classes.active
+              ].join(" ")}
+              onClick={() => applyYearFilter(year)}
             >
               {year}
             </div>
@@ -31,8 +59,11 @@ const LeftContent = ({
           return (
             <div
               key={index}
-              className={classes.year}
-              onClick={() => successfulLaunchFilter(bool)}
+              className={[
+                classes.year,
+                bool === successfulLaunch && classes.active
+              ].join(" ")}
+              onClick={() => applysuccessfulLaunchFilter(bool)}
             >
               {String(bool)}
             </div>
@@ -45,8 +76,11 @@ const LeftContent = ({
           return (
             <div
               key={index}
-              className={classes.year}
-              onClick={() => successfulLandingFilter(bool)}
+              className={[
+                classes.year,
+                bool === successfulLanding && classes.active
+              ].join(" ")}
+              onClick={() => applysuccessfulLandingFilter(bool)}
             >
               {String(bool)}
             </div>
@@ -60,7 +94,8 @@ const LeftContent = ({
 export default LeftContent;
 
 LeftContent.propTypes = {
-  launchyearFilter: PropTypes.func,
-  successfulLaunchFilter: PropTypes.func,
-  successfulLandingFilter: PropTypes.func,
+  applyFilter: PropTypes.func,
+  launchYear: PropTypes.number,
+  successfulLaunch: PropTypes.bool,
+  successfulLanding: PropTypes.bool
 };

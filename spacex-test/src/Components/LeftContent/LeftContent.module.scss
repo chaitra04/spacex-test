@@ -7,6 +7,7 @@
     box-shadow: 0 0 8px 0 rgba(0,0,0,0.05);
     margin-right: 20px;
     padding: 10px 20px;
+    margin-bottom: 20px;
 }
 
 .header {
@@ -29,11 +30,15 @@
     text-align: center;
     width: 45%;
     box-sizing: border-box;
-    padding: 7px 20px;
+    padding: 7px 0px;
     border-radius: 10px;
     background-color: $pastelGreen;
     margin-bottom: 15px;
     text-align: center;
     text-transform: capitalize;
     cursor: pointer;
+}
+
+.active {
+    background-color: $activeGreen;
 }

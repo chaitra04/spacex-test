@@ -6,7 +6,13 @@
 }
 
 .card {
-    width: 25%;    
+    width: 100%;   
+    @include breakpoint($tablet) {
+        width: 100%;
+    }
+    @include breakpoint($desktop) {
+        width: 25%;
+    } 
 }
 
 .cardInner {
@@ -22,9 +28,12 @@
     background: $dustyGray;
     border-radius: 5px;
 }
-
+.image {
+    width: 100%;
+}
 .details {
     padding: 10px 0 10px;
+    text-align: left;
 }
 .missionName {
     color: $blueRibbon;

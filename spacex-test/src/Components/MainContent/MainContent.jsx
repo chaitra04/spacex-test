@@ -4,6 +4,7 @@ import Data from "../../Utils/Data";
 import classes from "./MainContent.module.scss";
 
 const MainContent = ({ data }) => {
+  console.log("MainContent", data);
   return (
     <div className={classes.wrapper}>
       {data &&
@@ -14,6 +15,7 @@ const MainContent = ({ data }) => {
               <div className={classes.cardInner}>
                 <div className={classes.imgWrap}>
                   <img
+                    className={classes.image}
                     src={
                       spaceDetail.links && spaceDetail.links.mission_patch_small
                     }
@@ -30,7 +32,7 @@ const MainContent = ({ data }) => {
                     <ul className={classes.missionidWrap}>
                       {spaceDetail.mission_id.map((mission_id) => {
                         return (
-                          <li className={classes.missionid}> {mission_id}</li>
+                          <li className={classes.missionid} key={mission_id}> {mission_id}</li>
                         );
                       })}
                     </ul>
