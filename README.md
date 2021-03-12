@@ -45,7 +45,7 @@ app.listen(PORT, ()=>{
 })
 ```
 
-## Chaning the URL without refreshing the page to retain thw filters
+## Changing the URL without refreshing the page to retain thw filters
 ```
 window.history.replaceState(null, "", `/home?launch_year=${year}&successful_launch=${launch}&successful_landing=${landing}`)
 ```
