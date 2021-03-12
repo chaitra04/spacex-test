@@ -45,6 +45,11 @@ app.listen(PORT, ()=>{
 })
 ```
 
+## Chaning the URL without refreshing the page to retain thw filters
+```
+window.history.replaceState(null, "", `/home?launch_year=${year}&successful_launch=${launch}&successful_landing=${landing}`)
+```
+
 ## Responsive behaviour
 
 Used media queries for different resolutions to achieve responsiveness
@@ -53,6 +58,26 @@ Used media queries for different resolutions to achieve responsiveness
         @content;
     }
 ```
+
+## SASS
+
+Used SASS for styling purpose.
+* mixins for creating breakpoints for responsive behvaiour
+```
+@mixin breakpoint($value) {
+    @media (min-width: $value) {
+        @content;
+    }
+}
+```
+* variables for constants
+```
+$mobile: 320px;
+$tablet: 701px;
+$blueRibbon: #3846FF;
+$activeGreen: #40a738;
+```
+
 ## HOC
 
 Used HOC to show loading component when the API is called and once the response is received show the cards component of each spaceX programs
