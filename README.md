@@ -2,6 +2,13 @@
 
 Demo link https://chaithra-spacex-launch-programs.netlify.app/
 
+## React JS 
+Implemented using create-react-app command for project set-up
+
+```
+npx create-react-app spacex-test
+```
+
 ## For server side rendering
 
 ```
@@ -76,6 +83,22 @@ $mobile: 320px;
 $tablet: 701px;
 $blueRibbon: #3846FF;
 $activeGreen: #40a738;
+```
+## Axios
+API calls are made using axios
+```
+const appClient  = axios.create({
+    baseURL:"https://api.spaceXdata.com/v3/launches",
+    headers: {
+        'Content-Type': 'application/json'
+    }
+})
+
+const appRequest = (options) => {
+    return appClient(options)
+    .then(res=>res.data)
+    .catch(err=>err);
+}
 ```
 
 ## HOC
